@@ -34,6 +34,17 @@ public class aula01 {
 		i2.status();
 		i2.tocar(); 
 		
+		Carro ca01 = new Carro();
+		ca01.fabricante = "Cherry";
+		ca01.modelo = "Celler";
+		ca01.cor = "Preto";
+		ca01.motor = 1.0;
+		ca01.portas = 4;
+		ca01.arCondicionadoLigado = true;
+		
+		ca01.status();
+		ca01.sobeLomba();
+		
 		/* Gato g1 = new Gato();
 		g1.nome = "D'Ale";
 		g1.cor = "Preto";
