@@ -22,28 +22,101 @@ public class Cavaquinista {
 		}
 		
 		
+				
 		// decaração de métodos
 		
-		public void nivelMusicalCavaco() {
+		public String nivelMusicalCavaco() {
 			
-			if( this.idade < 25 && this.tempoCarreira < 10 && this.pontuacaoNivel <= 7) {
-				System.out.println("e seu nivel musical é Cavaco JUNIOR.");
-				
-			} else if( this.idade >= 25 && this.tempoCarreira >= 10 && this.pontuacaoNivel > 7) {
-				System.out.println("e seu nivel musical é Cavaco PLENO.");
-				
-			} else if( this.idade >= 35 && this.tempoCarreira >= 20  && this.pontuacaoNivel >= 9) {
-				System.out.println("e seu nivel musical é Cavaco SÊNIOR.");
-			
+			if (this.idade >= 35 && this.tempoCarreira >= 20 && this.pontuacaoNivel >= 9) {
+			    return "seu nível musical é Cavaco SÊNIOR.";
+
+			} else if (this.idade >= 25 && this.tempoCarreira >= 10 && this.pontuacaoNivel > 7) {
+			    return "seu nível musical é Cavaco PLENO.";
+
+			} else if (this.idade < 25 && this.tempoCarreira < 10 && this.pontuacaoNivel <= 7) {
+			    return "seu nível musical é Cavaco JUNIOR.";
 			}
+
+			return "Nível não identificado.";
 			
 		}
 		
-		// metodos de public void statusCavaquinista() {
+		
+		public void statusCavaquinista() {
+			
+			System.out.printf("O Cavaquinista se chama %s, tem %d anos de idade e %d anos de carreira. \n"+
+							getNome() + getIdade() + tempoCarreira
+							);
+			
+			if( estiloLevada.length() > 0) {
+				System.out.printf("Seu estilo de levada é %s e sua pontuação de nível musical é %.1f. \n" +
+									getEstiloLevada() +
+									getPontuacaoNivel()
+									);
+			}
+			
+			System.out.print(nivelMusicalCavaco());
 			
 		}
+			
+
+		// Métodos de acesso - GET - busca e retorno
+			
+			public String getNome() {
+				return nome;
+			}
+			
+			public String getSexo() {
+				return sexo;
+			}
+			
+			public int getIdade() {
+				return idade;
+			}
+			
+			public int getTempoCarreira() {
+				return tempoCarreira;
+			}
+			
+			public double getPontuacaoNivel() {
+				return pontuacaoNivel;
+			}
+			
+			public String getEstiloLevada() {
+				return estiloLevada;
+			}
+			
+			
+	// Métodos de acesso - SET - alteração de valor do atributo
+			
+			public void setNome( String novoNome) {
+				this.nome = novoNome;
+			}
+			
+			public void setSexo( String novoSexo) {
+				this.sexo = novoSexo;
+			}
+			
+			public void setIdade( int novaIdade) {
+				this.idade = novaIdade;
+			}
+			
+			public void setTempoCarreira( int novoTempoCarreira) {
+				this.tempoCarreira = novoTempoCarreira;
+			}
+			
+			public void setPontuacaoNivel( double novaPontuacaoNivel) {
+				this.pontuacaoNivel = novaPontuacaoNivel;
+			}
+			
+			public void setEstiloLevada( String novoestiloLevada) {
+				this.estiloLevada = novoestiloLevada;
+			}
+			
+			
+}
 	
 
-	}
+	
 
 
