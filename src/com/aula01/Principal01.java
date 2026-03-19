@@ -1,6 +1,6 @@
 package com.aula01;
 
-public class aula01 {
+public class Principal01 {
 
 	public static void main(String[] args) {
 		Caneta c1 = new Caneta();
