@@ -44,18 +44,18 @@ public class Cavaquinista {
 		
 		public void statusCavaquinista() {
 			
-			System.out.printf("O Cavaquinista se chama %s, tem %d anos de idade e %d anos de carreira. \n"+
-							getNome() + getIdade() + tempoCarreira
+			System.out.printf("O Cavaquinista se chama %s, tem %d anos de idade e %d anos de carreira. \n",
+							getNome(), getIdade(), tempoCarreira
 							);
 			
 			if( estiloLevada.length() > 0) {
-				System.out.printf("Seu estilo de levada é %s e sua pontuação de nível musical é %.1f. \n" +
-									getEstiloLevada() +
+				System.out.printf("Seu estilo de levada é %s e sua pontuação de nível musical é %.1f. \n",
+									getEstiloLevada(),
 									getPontuacaoNivel()
 									);
 			}
 			
-			System.out.print(nivelMusicalCavaco());
+			System.out.println(nivelMusicalCavaco()+ "\n");
 			
 		}
 			
