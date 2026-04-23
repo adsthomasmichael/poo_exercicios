@@ -30,6 +30,9 @@ public class Restaurante {
 	
 	public Pedido realizarPedido(Cliente cliente, Produto produto01, Produto produto02, Produto produto03) {
 		
+		if (cliente == null || produto01 == null) {
+            return null; // pedido inválido
+        }
 		double somaBase = 0; 
 		
 		//soma dos produtos
@@ -67,6 +70,22 @@ public class Restaurante {
 		pedido.setValorTotal(somaBase);
 		return pedido;
 	}
+	
+	public Pedido realizarPedido(Cliente c1, Produto p1) { //sobrecarga 1
+		
+		return realizarPedido(c1, p1, null, null);
+	}
+	
+	public Pedido realizarPedido(Cliente c2, Produto p1, Produto p2) {// sobrecarga 2
+		
+		return realizarPedido(c2, p1, p2, null);
+	}
+	
+	public void exibirInformacoes() {
+        System.out.println("=== Restaurante ===");
+        System.out.println("Nome             : " + nome);
+        System.out.printf("Total arrecadado : R$ %.2f%n", totalArrecadado);
+    }
 	
 	
 
