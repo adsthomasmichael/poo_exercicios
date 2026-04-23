@@ -28,12 +28,14 @@ public class Restaurante {
 		this.totalArrecadado = totalArrecadado;
 	}
 	
+	String frete = "";
 	public Pedido realizarPedido(Cliente cliente, Produto produto01, Produto produto02, Produto produto03) {
 		
 		if (cliente == null || produto01 == null) {
             return null; // pedido inválido
         }
 		double somaBase = 0; 
+		
 		
 		//soma dos produtos
 		if(produto01 != null) {somaBase += produto01.getPreco();}
@@ -45,23 +47,29 @@ public class Restaurante {
 			somaBase *= 0.90;
 		}
 		// Se tem bebida → +5%
-		if( produto01.getCategoria().contains("Bebida")) {//Pedido com bebida → +5% de taxa
+		if( produto01 != null && produto01.getCategoria().contains("Bebida")) {//Pedido com bebida → +5% de taxa
 			somaBase *= 1.05;
 		}
-		if( produto02.getCategoria().contains("Bebida")) {//Pedido com bebida → +5% de taxa
+		if( produto02 != null && produto02.getCategoria().contains("Bebida")) {//Pedido com bebida → +5% de taxa
 			somaBase *= 1.05;
 		}
-		if ( produto03.getCategoria().contains("Bebida")) {//Pedido com bebida → +5% de taxa
+		if ( produto03 != null && produto03.getCategoria().contains("Bebida")) {//Pedido com bebida → +5% de taxa
 			somaBase *= 1.05;
 		}
+		
 		//Pedido acima de R$100 → 10% de desconto adicional
 		if (somaBase > 100) { 
 			somaBase *= 0.90;
 		}
+		
 		// Se endereço contém “Centro” → frete grátis, Senão → + R$10
-		if( !cliente.getEndereco().contains("Centro")) { 
+		if( !cliente.getEndereco().toLowerCase().contains("centro")) { 
+			frete = "R$10,00";
 			somaBase += 10;
-		}
+		}else {
+			frete = "Gratis";
+			} 
+		
 		// Atualiza total do restaurante
 		totalArrecadado += somaBase;
 		
@@ -84,6 +92,7 @@ public class Restaurante {
 	public void exibirInformacoes() {
         System.out.println("=== Restaurante ===");
         System.out.println("Nome             : " + nome);
+        System.out.println("Frete            : " + frete);
         System.out.printf("Total arrecadado : R$ %.2f%n", totalArrecadado);
     }
 	

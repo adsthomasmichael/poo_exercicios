@@ -125,7 +125,7 @@ public class Pedido {
 			System.out.println(produto03.toString());	
 		}
 	System.out.println("");
-	System.out.println("Valor Total  : "+ getValorTotal());
+	System.out.printf("Valor Total  : %.2f\n", getValorTotal());
 	System.out.println("Status pedido: "+getStatus());
 	
 	}
