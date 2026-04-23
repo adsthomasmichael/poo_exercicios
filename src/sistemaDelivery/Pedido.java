@@ -1,5 +1,6 @@
 package sistemaDelivery;
 
+
 public class Pedido {
 	/* Um pedido possui:
 		um cliente, até 3 produtos, valor total, status (ex: “criado”, “em preparo”, “entregue”) */
@@ -61,7 +62,7 @@ public class Pedido {
 		return produto02;
 	}
 
-	public void setPedido02(Produto produto02) {
+	public void setProduto02(Produto produto02) {
 		this.produto02 = produto02;
 	}
 
@@ -88,28 +89,45 @@ public class Pedido {
 	}
 
 	public void setStatus(String status) {
-		
-		this.status = "criado";		
+		if (status != null && !status.trim().isEmpty()) {
+		this.status = status;		
+		}
 	}
 	
 	public double calcularTotal() {
 		double somaValores = 0;
 		
 		if(produto01.getPreco() > 0) {
-			somaValores = produto01.getPreco();
-			setValorTotal(somaValores);
+			somaValores += produto01.getPreco();
 		}
 		else if( produto02.getPreco() > 0) {
-			somaValores = produto02.getPreco();
-			setValorTotal(somaValores);
+			somaValores += produto02.getPreco();
 		}
 		else if( produto03.getPreco() > 0) {
-			somaValores = produto03.getPreco();
-			setValorTotal(somaValores);
+			somaValores += produto03.getPreco();
 		}
 		
-		
+	setValorTotal(somaValores);	
 	return somaValores;
+	}
+	
+	public void exibirResumo() {
+		System.out.println("=== RESUMO PEDIDO === \n");
+		System.out.println(cliente.toString());
+		
+		if(produto01 != null) {
+			System.out.println(produto01.toString());
+		}
+		if(produto02 != null) {
+			System.out.println(produto02.toString()); 
+		}
+		if(produto03 != null) {
+			System.out.println(produto03.toString());	
+		}
+	System.out.println("");
+	System.out.println("Valor Total  : "+ getValorTotal());
+	System.out.println("Status pedido: "+getStatus());
+	
 	}
 	
 	
