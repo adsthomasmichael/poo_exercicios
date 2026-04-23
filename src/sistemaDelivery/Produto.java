@@ -7,9 +7,9 @@ public class Produto {
 	private double preco;
 	
 	public Produto (String nome, String categoria, double preco) {
-		this.nome = nome;
-		this.categoria = categoria;
-		this.preco = preco;
+		setNome(nome);
+		setCategoria(categoria);
+		setPreco(preco);
 	}
 
 	public String getNome() {
@@ -17,7 +17,9 @@ public class Produto {
 	}
 
 	public void setNome(String nome) {
-		this.nome = nome;
+		if(nome != null && !nome.trim().isEmpty()) { //validaçao nome nulo e vazio
+			this.nome = nome;
+		}
 	}
 
 	public String getCategoria() {
@@ -25,7 +27,9 @@ public class Produto {
 	}
 
 	public void setCategoria(String categoria) {
-		this.categoria = categoria;
+		if(categoria != null && !categoria.trim().isEmpty()) {
+			this.categoria = categoria;	
+		}
 	}
 
 	public double getPreco() {
@@ -33,14 +37,14 @@ public class Produto {
 	}
 
 	public void setPreco(double preco) {
-		this.preco = preco;
+		if( preco >= 0) {
+			this.preco = preco;
+		}
+		
 	}
 	
 	@Override
 	public String toString() {
-		return "=== PRODUTO ===\n"+
-				"Nome      : "+ nome +
-				"\nCategoria: "+ categoria +
-				"\nPreço    : "+ preco;
+		return nome + " (" + categoria + ") - R$ " + String.format("%.2f", preco);
 	}
 }
