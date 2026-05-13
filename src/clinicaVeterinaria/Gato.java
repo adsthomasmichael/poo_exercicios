@@ -5,15 +5,15 @@ public class Gato extends Animal{
     protected double peso;
     protected Consulta consulta;
 
-    public Gato(double peso, Consulta consulta) {
+    public Gato(String nome, int idade, double peso, Consulta consulta) {
+        super(nome, idade);
         setPeso(peso);
         this.consulta = consulta;
     }
 
-    public Gato(String nome, int idade, double peso, Consulta consulta) {
-        super(nome, idade);
-        this.peso = peso;
-        this.consulta = consulta;
+    public Gato() {
+        super();
+
     }
 
     public double getPeso() {
