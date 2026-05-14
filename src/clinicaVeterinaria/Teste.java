@@ -17,7 +17,7 @@ public class Teste {
         
         Animal a = null;
         
-        int opcao = Teclado.leInt("Digite 1 para CACHORRO ou 2 para GATO: ");
+        int opcao = Teclado.leInt("Digite 1 para CACHORRO, 2 para GATO ou 3 para PAPAGAIO: ");
         
         	if( opcao == 1) {
         		a = new Cachorro(Teclado.leString("Qual o nome do Cachorro?"), Teclado.leInt("QUal a idade do cachorro?"), Teclado.leString("Qual a raça do cachorro?"));
@@ -28,9 +28,15 @@ public class Teste {
         		a = new Gato(Teclado.leString("Qual o nome do Gato?"), Teclado.leInt("Qual a idade do Gato"), Teclado.leDouble("Qual o peso do gato?"), consulta);
         		Gato ga1 = (Gato) a;
         		ga1.setPeso(6.1);
-        	}
-        	
-        	InformacoesAnimais info = new InformacoesAnimais();
+        	} else if ( opcao == 3) {
+                a = new Papagaio();
+                    a.setNome(Teclado.leString("Informe o nome do Papagaio: "));
+                    a.setIdade(Teclado.leInt("Qual a idade do Papagaio? "));
+                    Papagaio p001 = (Papagaio) a;
+                    p001.setVocabulario(Teclado.leInt("Quantas palavras compõe seu vocabulario?"));
+            }
+
+        InformacoesAnimais info = new InformacoesAnimais();
         	info.imprimeExclusivosAnimal(a);
         	info.imprimeInformacoesAnimal(a);
         	
