@@ -11,6 +11,10 @@ public class InformacoesAnimais {
             Gato g = (Gato) a;
             System.out.printf("É um gato e seu peso é %.2f.", g.getPeso());
         }
+        else if (a instanceof Papagaio){
+            Papagaio p = (Papagaio) a;
+            System.out.printf("É um papagaio e seu vocabulario é de %d palavras", p.getVocabulario());
+        }
     }
 
     public void imprimeInformacoesAnimal(Animal a){
