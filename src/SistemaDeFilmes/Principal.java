@@ -81,12 +81,12 @@ public class Principal {
 				catalogo01.getArrayCatalogo()[i] instanceof Drama) {
 					
 					Drama filmeDrama1 = (Drama) catalogo01.getArrayCatalogo()[i];
-					if(filmeDrama1.ganhouOscar) {
+					if(filmeDrama1.isGanhouOscar()) {
 						System.out.println(filmeDrama1);
 					}
 			}
 		}
-		catalogo01.imprimeFilmesOscar();
+		
 				
 	}
 
