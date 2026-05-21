@@ -1,5 +1,7 @@
 package SistemaDeFilmes;
 
+import java.util.Iterator;
+
 import com.utils.Teclado;
 
 public class Principal {
@@ -73,6 +75,18 @@ public class Principal {
 				else {
 					System.out.println("Erro! Filme não encontrado.");
 				}
+		//Imprima os filmes Drama que ganharam Oscar
+		for( int i = 0; i < catalogo01.getArrayCatalogo().length; i++) {
+			if(catalogo01.getArrayCatalogo()[i] != null && 
+				catalogo01.getArrayCatalogo()[i] instanceof Drama) {
+					
+					Drama filmeDrama1 = (Drama) catalogo01.getArrayCatalogo()[i];
+					if(filmeDrama1.ganhouOscar) {
+						System.out.println(filmeDrama1);
+					}
+			}
+		}
+		catalogo01.imprimeFilmesOscar();
 				
 	}
 
