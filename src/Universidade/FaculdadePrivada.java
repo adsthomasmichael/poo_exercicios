@@ -1,10 +1,10 @@
 package Universidade;
 
-public class FAculdadePrivada extends Faculdade{
+public class FaculdadePrivada extends Faculdade{
 
     protected String grupoEmpresarial;
 
-    public FAculdadePrivada(String nome, String cidade, double orcamentoBruto, double orcamentoLiquido, int qtdProfessores, String grupoEmpresarial) {
+    public FaculdadePrivada(String nome, String cidade, double orcamentoBruto, double orcamentoLiquido, int qtdProfessores, String grupoEmpresarial) {
         super(nome, cidade, orcamentoBruto, orcamentoLiquido, qtdProfessores);
         this.grupoEmpresarial = grupoEmpresarial;
     }
