@@ -36,12 +36,15 @@ public class AuditoriaFaculdades {
 
         for (int i = 0; i < arrayFaculdades.length; i++){
             Professor[] arrayDeProf = arrayFaculdades[i].getArrayProfessores();
-            double salLiqOk = arrayDeProf[i].getSalarioBruto() * 0.80;
 
-            if (arrayDeProf[i].getSalarioLiquido() < salLiqOk){
-                arrayRetoruno[i] = arrayFaculdades[i];
+            for (int j = 0; j < arrayDeProf.length; j++){
+                double salLiqOk = arrayDeProf[j].getSalarioBruto() * 0.80;
+
+                if (arrayDeProf[j].getSalarioLiquido() < salLiqOk){
+                    arrayRetoruno[i] = arrayFaculdades[i];
+                    break;
+                }
             }
-
         }
         return arrayRetoruno;
     }
@@ -52,7 +55,7 @@ public class AuditoriaFaculdades {
         Faculdade[] arrayRetorno = new Faculdade[arrayFaculdades.length];
 
         for ( int i = 0; i < arrayFaculdades.length; i++){
-            double orcaOK = arrayFaculdades[i].getOrcamentoBruto() * 90;
+            double orcaOK = arrayFaculdades[i].getOrcamentoBruto() * 0.90;
             if (arrayFaculdades[i].getOrcamentoLiquido() > orcaOK){
                 arrayRetorno[i] = arrayFaculdades[i];
             }

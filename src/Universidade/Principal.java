@@ -9,7 +9,7 @@ public class Principal {
                 new FaculdadePublica("Faculdade02", "São Leopoldo", 150000, 140000, (int) (Math.random() * 40 + 1), 1414),
                 new FaculdadePublica("Faculdade03", "Canoas", 150000, 140000, (int) (Math.random() * 40 + 1), 1515),
                 new FaculdadePublica("Faculdade04", "Guaiba", 150000, 140000, (int) (Math.random() * 40 + 1), 1616),
-                new FaculdadePublica("Faculdade05", "Porto Alegre", 150000, 140000, (int) (Math.random() * 40 + 1), 1616),
+                new FaculdadePublica("Faculdade05", "Porto Alegre", 150000, 140000, (int) (Math.random() * 40 + 1), 1717),
 
                 new FaculdadePrivada("Faculdade06", "Porto Alegre", 250000, 200000, (int) (Math.random() * 40 + 1), "Grupo Lassale"),
                 new FaculdadePrivada("Faculdade07", "Porto Alegre", 350000, 200000, (int) (Math.random() * 40 + 1), "Grupo Umbanda"),
@@ -24,7 +24,7 @@ public class Principal {
 
                 for (int j = 0; j < professors.length; j++) {
                     double salarioBruto = Math.random() * 10000 + 2000;
-                    double salarioLiquido = salarioBruto * (Math.random() * 0.20 + 0.40);
+                    double salarioLiquido = salarioBruto * (Math.random() * 0.50 + 0.50);
 
                     professors[j] = new Professor("Professor " + j, salarioBruto, salarioLiquido);
                 }
@@ -35,11 +35,13 @@ public class Principal {
         //-------MUITOS PROFESSORES----------
         System.out.println("=== Faculdades com Professores demais ===");
         Faculdade[] faculProfessoresDemais = auditoriaFaculdades.universidadesComMuitosProfessores();
-        for (int i = 0; i < faculdades.length; i++) {
-            if (faculProfessoresDemais[i] instanceof FaculdadePublica) {
-                System.out.printf("A Faculdade %S é pública e seu codigo no MEC é %d. \n", faculProfessoresDemais[i].getNome(), ((FaculdadePublica) faculProfessoresDemais[i]).getCodMEC());
-            } else if (faculProfessoresDemais[i] instanceof FaculdadePrivada) {
-                System.out.printf("A Faculdade %S é Privada e faz parte do grupo empresarial %S. \n", faculProfessoresDemais[i].getNome(), ((FaculdadePrivada) faculProfessoresDemais[i]).getGrupoEmpresarial());
+        for (int i = 0; i < faculProfessoresDemais.length; i++) {
+            if (faculProfessoresDemais[i] != null) {
+                if (faculProfessoresDemais[i] instanceof FaculdadePublica) {
+                    System.out.printf("A Faculdade %S é pública e seu codigo no MEC é %d. \n", faculProfessoresDemais[i].getNome(), ((FaculdadePublica) faculProfessoresDemais[i]).getCodMEC());
+                } else if (faculProfessoresDemais[i] instanceof FaculdadePrivada) {
+                    System.out.printf("A Faculdade %S é Privada e faz parte do grupo empresarial %S. \n", faculProfessoresDemais[i].getNome(), ((FaculdadePrivada) faculProfessoresDemais[i]).getGrupoEmpresarial());
+                }
             }
         }
 
@@ -47,11 +49,13 @@ public class Principal {
         System.out.println("=== Faculdades com descontos salariais ===");
         Faculdade[] faculDescontosSalariais = auditoriaFaculdades.universidadesComDescontoSalarial();
 
-        for (int i = 0; i < faculdades.length; i++){
-            if (faculDescontosSalariais[i] instanceof FaculdadePublica) {
-                System.out.printf("A Faculdade %S é pública e seu codigo no MEC é %d. \n", faculDescontosSalariais[i].getNome(), ((FaculdadePublica) faculDescontosSalariais[i]).getCodMEC());
-            } else if (faculDescontosSalariais[i] instanceof FaculdadePrivada) {
-                System.out.printf("A Faculdade %S é Privada e faz parte do grupo empresarial %S. \n", faculDescontosSalariais[i].getNome(), ((FaculdadePrivada) faculDescontosSalariais[i]).getGrupoEmpresarial());
+        for (int i = 0; i < faculDescontosSalariais.length; i++) {
+            if (faculDescontosSalariais[i] != null) {
+                if (faculDescontosSalariais[i] instanceof FaculdadePublica) {
+                    System.out.printf("A Faculdade %S é pública e seu codigo no MEC é %d. \n", faculDescontosSalariais[i].getNome(), ((FaculdadePublica) faculDescontosSalariais[i]).getCodMEC());
+                } else if (faculDescontosSalariais[i] instanceof FaculdadePrivada) {
+                    System.out.printf("A Faculdade %S é Privada e faz parte do grupo empresarial %S. \n", faculDescontosSalariais[i].getNome(), ((FaculdadePrivada) faculDescontosSalariais[i]).getGrupoEmpresarial());
+                }
             }
         }
 
@@ -59,11 +63,13 @@ public class Principal {
         System.out.println("=== Faculdades com desvios orçamentarios ===");
         Faculdade[] faculDesvios = auditoriaFaculdades.universidadesComDesvioOrcamentario();
 
-        for (int i = 0; i < faculDesvios.length; i++){
-            if (faculDesvios[i] instanceof FaculdadePublica){
-                System.out.printf("A Faculdade %S é pública e seu codigo no MEC é %d. \n", faculDesvios[i].getNome(), ((FaculdadePublica) faculDesvios[i]).getCodMEC());
-            } else if (faculDesvios[i] instanceof FaculdadePrivada) {
-                System.out.printf("A Faculdade %S é Privada e faz parte do grupo empresarial %S. \n", faculDesvios[i].getNome(), ((FaculdadePrivada) faculDesvios[i]).getGrupoEmpresarial());
+        for (int i = 0; i < faculDesvios.length; i++) {
+            if (faculDesvios[i] != null) {
+                if (faculDesvios[i] instanceof FaculdadePublica) {
+                    System.out.printf("A Faculdade %S é pública e seu codigo no MEC é %d. \n", faculDesvios[i].getNome(), ((FaculdadePublica) faculDesvios[i]).getCodMEC());
+                } else if (faculDesvios[i] instanceof FaculdadePrivada) {
+                    System.out.printf("A Faculdade %S é Privada e faz parte do grupo empresarial %S. \n", faculDesvios[i].getNome(), ((FaculdadePrivada) faculDesvios[i]).getGrupoEmpresarial());
+                }
             }
         }
     }
