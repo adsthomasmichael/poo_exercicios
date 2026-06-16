@@ -1,4 +1,4 @@
-package EmpresaTransporte;
+package Transportadora;
 
 public class Motorista {
 
