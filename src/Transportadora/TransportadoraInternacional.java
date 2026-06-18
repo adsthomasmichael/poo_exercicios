@@ -1,6 +1,5 @@
 package Transportadora;
 
-import java.util.Arrays;
 
 public class TransportadoraInternacional extends EmpresaTransporte {
     protected String paisOrigem;
@@ -26,7 +25,7 @@ public class TransportadoraInternacional extends EmpresaTransporte {
                 ", numCNPJ='" + numCNPJ + '\'' +
                 ", faturamentoBruto=" + faturamentoBruto +
                 ", faturamentoLiquido=" + faturamentoLiquido +
-                ", arrayMotoristas=" + Arrays.toString(arrayMotoristas) +
+                ", qtdMotoristas=" + arrayMotoristas.length +
                 '}';
     }
 }

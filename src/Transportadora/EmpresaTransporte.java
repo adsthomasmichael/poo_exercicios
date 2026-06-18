@@ -1,6 +1,5 @@
 package Transportadora;
 
-import java.util.Arrays;
 
 public class EmpresaTransporte {
 
@@ -10,6 +9,8 @@ public class EmpresaTransporte {
     protected  double faturamentoLiquido;
     protected Motorista[] arrayMotoristas;
 
+    public EmpresaTransporte() {
+    }
 
     public EmpresaTransporte(String nome, String numCNPJ, double faturamentoBruto, double faturamentoLiquido, int qntMotoristas) {
         this.nome = nome;
@@ -66,7 +67,7 @@ public class EmpresaTransporte {
                 ", numCNPJ='" + numCNPJ + '\'' +
                 ", faturamentoBruto=" + faturamentoBruto +
                 ", faturamentoLiquido=" + faturamentoLiquido +
-                ", arrayMotoristas=" + Arrays.toString(arrayMotoristas) +
+                ", qtdMotoristas=" + arrayMotoristas.length +
                 '}';
     }
 }
